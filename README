@@ -1,0 +1,25 @@
+# Node.js Express.js Note-Taking Website
+
+## Introduction
+
+This is a simple note-taking website built with Node.js and Express.js, along with a command-line interface (CLI) for users to create and manage their notes. This README provides an overview of the project and instructions on how to set it up and use it.
+
+## Features
+
+- Create, read, update, and delete notes through a user-friendly web interface.
+- Manage your notes effortlessly with a command-line interface.
+- Secure user authentication for protecting your notes.
+- Store notes in a database for persistence across sessions.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js**: You need Node.js installed on your system. You can download it from [nodejs.org](https://nodejs.org/).
+
+## Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/note-taking-app.git
