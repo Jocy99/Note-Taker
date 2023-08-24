@@ -20,6 +20,16 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 
 1. Clone the repository to your local machine:
-
    ```bash
-   git clone https://github.com/your-username/note-taking-app.git
+   git clone https://github.com/Jocy99/Note-Taker.git
+2. Navigate to the project directory.
+3. Run npm install in integrated terminal to download project dependencies.
+4. Run npm start to begin.
+
+## Usage
+When on the localhost url, user may type in a new note by clicking the get started button. Once our notes are typed 
+we can save with the icon on the right side of the screen. We can also see the saved notes appear to the left column 
+with an option to delete notes than we no longer need.
+
+## License 
+This project is licensed under the MIT License.
