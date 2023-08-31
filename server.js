@@ -4,6 +4,8 @@ const db = require("./db/db.json");
 const app = express();
 const PORT = 3001;
 const fs = require("fs");
+const { Console } = require("console");
+
 // middlewares
 // allows us to use json format language
 app.use(express.json());
@@ -20,7 +22,8 @@ app.get("/notes", (req, res) => {
 
 // API server routes
 app.get("/api/notes", (req, res) => {
-  res.json(db);
+  const currFile = JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
+  res.json(currFile);
 });
 
 app.post("/api/notes", (req, res) => {
@@ -34,12 +37,17 @@ app.post("/api/notes", (req, res) => {
 });
 
 // deletes note
-router.delete("/notes/:id", (req, res) => {
+app.delete("/api/notes/:id", (req, res) => {
+console.log("GETTING REQUEST TO DELETE", req.params.id);
+  const currFile = JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
   const id = req.params.id;
-  const newDB = db.filter((note) => note.id != id);
-  fs.writeFileSync("./db/db.json", JSON.stringify(db));
-  res.json(newDBb);
+  console.log("CURRENT FILE", currFile);
+  const newDB = currFile.filter((note) => note.id != id);
+  console.log("NEW FILE", newDB);
+  fs.writeFileSync("./db/db.json", JSON.stringify(newDB));
+  res.json(newDB);
 });
+
 // allows app to llisten on a specific port
 app.listen(PORT, () => {
   console.log("listening to port 3001");
